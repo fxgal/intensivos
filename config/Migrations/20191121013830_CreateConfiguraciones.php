@@ -10,7 +10,7 @@ class CreateConfiguraciones extends AbstractMigration
      * http://docs.phinx.org/en/latest/migrations.html#the-change-method
      * @return void
      */
-    public function up()
+    public function change()
     {
         $table = $this->table('configuraciones');
         $table->addColumn('nombre', 'string', [
@@ -22,7 +22,11 @@ class CreateConfiguraciones extends AbstractMigration
             'default' => null,
             'limit' => 255,
             'null' => false,
+        ]);
+        $table->addIndex([
+            'clave',
         ], [
+            'name' => 'UNIQUE_CLAVE',
             'unique' => true,
         ]);
         $table->addColumn('valor', 'string', [
@@ -39,6 +43,14 @@ class CreateConfiguraciones extends AbstractMigration
             'null' => false,
         ]);
         $table->create();
+    }
+
+    /**
+     * Migrate Up.
+     */
+    public function up()
+    {
+        $this->change();
     }
 
     /**
