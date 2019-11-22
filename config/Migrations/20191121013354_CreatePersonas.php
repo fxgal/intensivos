@@ -10,7 +10,7 @@ class CreatePersonas extends AbstractMigration
      * http://docs.phinx.org/en/latest/migrations.html#the-change-method
      * @return void
      */
-    public function change()
+    public function up()
     {
         $table = $this->table('personas');
         $table->addColumn('usuario_id', 'integer', [
@@ -53,5 +53,12 @@ class CreatePersonas extends AbstractMigration
             'unique' => true,
         ]);
         $table->create();
+    }
+
+    public function down()
+    {
+        $this->table('personas')->drop()->save();
+
+        $this->up();
     }
 }
