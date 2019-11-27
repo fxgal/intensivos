@@ -32,15 +32,18 @@ class MyNewMigration extends AbstractMigration
     public function change()
     {
         $table = $this->table('materias');
-        $table->addColumn('nombre_materia', 'string')
-              ->addColumn('uc', 'integer')
+        $table->addColumn('nombre', 'string')
+              ->addColumn('codigo', 'string')
+              ->addColumn('semestre', 'integer')
+              ->addColumn('created', 'datetime')
+              ->addColumn('modified', 'datetime', ['null'=> true])
               ->addIndex(['id'])
               ->create();
         $table2 = $this->table('prelaciones');
-        $table2->addColumn('id_materia', 'integer')
-              ->addColumn('prelacion', 'string')
+        $table2->addColumn('materia_id', 'integer')
+              ->addColumn('prelacion_id', 'string')
               ->addIndex(['id'])
-              ->addForeignKey('id_materia', 'materias', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])
+              ->addForeignKey('materia_id', 'materias', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])
               ->create();
     }
 
