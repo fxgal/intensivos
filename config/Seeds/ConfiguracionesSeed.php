@@ -20,22 +20,20 @@ class ConfiguracionesSeed extends AbstractSeed
     {
         $this->execute('TRUNCATE TABLE configuraciones');
 
-        $data = [];
-
-        $data[] = [
-            'nombre'        => "Titulo del sitio",
-            'clave'         => "DF7S48",
-            'valor'         => "Intensivos 2020",
-            'created'       => date('Y-m-d H:i:s'),
+        $data = [
+          [
+              'nombre'        => "Cantidad mínima para ofertar en Intensivos",
+              'clave'         => "cantidad_censo",
+              'valor'         => "20",
+              'created'       => date('Y-m-d H:i:s'),
+          ],
+          [
+              'nombre'        => "Valor de la UC",
+              'clave'         => "valor_uc",
+              'valor'         => "5000",
+              'created'       => date('Y-m-d H:i:s'),
+          ]
         ];
-
-        $data[] = [
-            'nombre'        => "Inscripciones",
-            'clave'         => "FTG321",
-            'valor'         => "Cerradas",
-            'created'       => date('Y-m-d H:i:s'),
-        ];
-
         $table = $this->table('configuraciones');
         $table->insert($data)->save();
     }
