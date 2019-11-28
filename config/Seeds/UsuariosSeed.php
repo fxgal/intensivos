@@ -19,7 +19,7 @@ class UsuariosSeed extends AbstractSeed
      */
     public function run()
     {
-        $this->execute('TRUNCATE TABLE personas');
+        $this->execute('TRUNCATE TABLE usuarios');
 
         $faker = Faker\Factory::create();
         $data = [];
