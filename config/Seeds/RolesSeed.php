@@ -27,11 +27,13 @@ class RolesSeed extends AbstractSeed
             [
                 'nombre'        => "Administrador",
                 'codigo'        => "admin",
+                'modified'       => date('Y-m-d H:i:s'),
                 'created'       => date('Y-m-d H:i:s'),
             ],
             [
                 'nombre'        => "Estudiante Regular",
                 'codigo'        => "estudiante",
+                'modified'       => date('Y-m-d H:i:s'),
                 'created'       => date('Y-m-d H:i:s'),
             ]
         ];

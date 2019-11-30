@@ -30,6 +30,7 @@ class UsuariosSeed extends AbstractSeed
                 'rol_id'        => $faker->numberBetween(1, 2),
                 'username'      => $faker->userName,
                 'password'      => $hasher->hash($faker->password),
+                'modified'      => date('Y-m-d H:i:s'),
                 'created'       => date('Y-m-d H:i:s'),
             ];
         }
