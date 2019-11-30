@@ -25,12 +25,14 @@ class ConfiguracionesSeed extends AbstractSeed
               'nombre'        => "Cantidad mínima para ofertar en Intensivos",
               'clave'         => "cantidad_censo",
               'valor'         => "20",
+              'modified'       => date('Y-m-d H:i:s'),
               'created'       => date('Y-m-d H:i:s'),
           ],
           [
               'nombre'        => "Valor de la UC",
               'clave'         => "valor_uc",
               'valor'         => "5000",
+              'modified'       => date('Y-m-d H:i:s'),
               'created'       => date('Y-m-d H:i:s'),
           ]
         ];

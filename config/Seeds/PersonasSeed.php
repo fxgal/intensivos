@@ -21,16 +21,16 @@ class PersonasSeed extends AbstractSeed
         $this->execute('TRUNCATE TABLE personas');
 
         $faker = Faker\Factory::create();
-        $user = 1;
         $data = [];
 
         for ($i = 0; $i < 50; $i++) {
             $data[] = [
-                'usuario_id'    => $user++,
+                'usuario_id'    => ($i+1),
                 'nombres'       => $faker->firstName,
                 'apellidos'     => $faker->lastName,
                 'email'         => $faker->email,
                 'cedula'        => $faker->numberBetween(6000000, 27800000),
+                'modified'      => date('Y-m-d H:i:s'),
                 'created'       => date('Y-m-d H:i:s'),
             ];
         }
