@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class MyNewMigration extends AbstractMigration
+class Materias extends AbstractMigration
 {
     /**
      * Change Method.
@@ -35,16 +35,10 @@ class MyNewMigration extends AbstractMigration
         $table->addColumn('nombre', 'string')
               ->addColumn('codigo', 'string')
               ->addColumn('semestre', 'integer')
-              ->addColumn('created', 'datetime')
+              ->addColumn('created', 'datetime', ['null'=> true])
               ->addColumn('modified', 'datetime', ['null'=> true])
               ->addIndex(['id'])
               ->create();
-        $table2 = $this->table('prelaciones');
-        $table2->addColumn('materia_id', 'integer')
-              ->addColumn('prelacion_id', 'string')
-              ->addIndex(['id'])
-              ->addForeignKey('materia_id', 'materias', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])
-              ->create();
-    }
 
+    }
 }
