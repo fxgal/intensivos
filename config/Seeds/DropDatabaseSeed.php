@@ -24,6 +24,8 @@ class DropDatabaseSeed extends AbstractSeed
       $this->execute('DROP TABLE IF EXISTS roles');
       $this->execute('DROP TABLE IF EXISTS personas');
       $this->execute('DROP TABLE IF EXISTS usuarios');
+      $this->execute('DROP TABLE IF EXISTS materias');
+      $this->execute('DROP TABLE IF EXISTS prelaciones');
       $this->execute('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

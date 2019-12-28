@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Prelaciones extends AbstractMigration
+class CreateMaterias extends AbstractMigration
 {
     /**
      * Change Method.
@@ -31,12 +31,14 @@ class Prelaciones extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('prelaciones');
-        $table->addColumn('materia_id', 'integer')
-              ->addColumn('prelacion_id', 'integer')
+        $table = $this->table('materias');
+        $table->addColumn('nombre', 'string')
+              ->addColumn('codigo', 'string')
+              ->addColumn('semestre', 'integer')
+              ->addColumn('created', 'datetime', ['null'=> true])
+              ->addColumn('modified', 'datetime', ['null'=> true])
               ->addIndex(['id'])
-              ->addForeignKey('materia_id', 'materias', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])
-              ->addForeignKey('prelacion_id', 'materias', 'id', ['delete'=> 'NO_ACTION', 'update'=> 'NO_ACTION'])
               ->create();
+
     }
 }

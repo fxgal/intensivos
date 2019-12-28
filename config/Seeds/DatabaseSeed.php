@@ -22,5 +22,7 @@ class DatabaseSeed extends AbstractSeed
         $this->call('RolesSeed');
         $this->call('UsuariosSeed');
         $this->call('PersonasSeed');
+        $this->call('MateriasSeed');
+        $this->call('PrelacionesSeed');
     }
 }
