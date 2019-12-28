@@ -3,7 +3,7 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class MateriasSeeder extends AbstractSeed
+class MateriasSeed extends AbstractSeed
 {
     /**
      * Run Method.

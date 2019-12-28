@@ -3,7 +3,7 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class PrelacionesSeeder extends AbstractSeed
+class PrelacionesSeed extends AbstractSeed
 {
     /**
      * Run Method.
