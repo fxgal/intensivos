@@ -203,4 +203,5 @@ Type::build('timestamp')
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 Inflector::rules('irregular', [
     'rol' => 'roles',
+    'configuracion' => 'configuraciones',
 ]);

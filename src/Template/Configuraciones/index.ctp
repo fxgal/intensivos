@@ -1,13 +1,13 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Configuracione[]|\Cake\Collection\CollectionInterface $configuraciones
+ * @var \App\Model\Entity\Configuracion[]|\Cake\Collection\CollectionInterface $configuraciones
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Configuracione'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Configuracion'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="configuraciones index large-9 medium-8 columns content">
@@ -25,18 +25,18 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($configuraciones as $configuracione): ?>
+            <?php foreach ($configuraciones as $configuracion): ?>
             <tr>
-                <td><?= $this->Number->format($configuracione->id) ?></td>
-                <td><?= h($configuracione->nombre) ?></td>
-                <td><?= h($configuracione->clave) ?></td>
-                <td><?= h($configuracione->valor) ?></td>
-                <td><?= h($configuracione->created) ?></td>
-                <td><?= h($configuracione->modified) ?></td>
+                <td><?= $this->Number->format($configuracion->id) ?></td>
+                <td><?= h($configuracion->nombre) ?></td>
+                <td><?= h($configuracion->clave) ?></td>
+                <td><?= h($configuracion->valor) ?></td>
+                <td><?= h($configuracion->created) ?></td>
+                <td><?= h($configuracion->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $configuracione->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $configuracione->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $configuracione->id], ['confirm' => __('Are you sure you want to delete # {0}?', $configuracione->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $configuracion->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $configuracion->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $configuracion->id], ['confirm' => __('Are you sure you want to delete # {0}?', $configuracion->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
