@@ -9,14 +9,16 @@ use Cake\Validation\Validator;
 /**
  * Roles Model
  *
- * @method \App\Model\Entity\Role get($primaryKey, $options = [])
- * @method \App\Model\Entity\Role newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Role[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Role|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Role saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Role patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Role[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Role findOrCreate($search, callable $callback = null, $options = [])
+ * @property &\Cake\ORM\Association\HasMany $Usuarios
+ *
+ * @method \App\Model\Entity\Rol get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Rol newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Rol[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Rol|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Rol saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Rol patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Rol[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Rol findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
@@ -37,6 +39,10 @@ class RolesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->hasMany('Usuarios', [
+            'foreignKey' => 'rol_id'
+        ]);
     }
 
     /**

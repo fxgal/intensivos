@@ -1,13 +1,13 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Role[]|\Cake\Collection\CollectionInterface $roles
+ * @var \App\Model\Entity\Rol[]|\Cake\Collection\CollectionInterface $roles
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Role'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Rol'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="roles index large-9 medium-8 columns content">
@@ -24,17 +24,17 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($roles as $role): ?>
+            <?php foreach ($roles as $rol): ?>
             <tr>
-                <td><?= $this->Number->format($role->id) ?></td>
-                <td><?= h($role->nombre) ?></td>
-                <td><?= h($role->codigo) ?></td>
-                <td><?= h($role->created) ?></td>
-                <td><?= h($role->modified) ?></td>
+                <td><?= $this->Number->format($rol->id) ?></td>
+                <td><?= h($rol->nombre) ?></td>
+                <td><?= h($rol->codigo) ?></td>
+                <td><?= h($rol->created) ?></td>
+                <td><?= h($rol->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $role->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $role->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $role->id], ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $rol->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $rol->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $rol->id], ['confirm' => __('Are you sure you want to delete # {0}?', $rol->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

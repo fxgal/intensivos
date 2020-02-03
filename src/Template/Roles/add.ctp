@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Role $role
+ * @var \App\Model\Entity\Rol $rol
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -11,9 +11,9 @@
     </ul>
 </nav>
 <div class="roles form large-9 medium-8 columns content">
-    <?= $this->Form->create($role) ?>
+    <?= $this->Form->create($rol) ?>
     <fieldset>
-        <legend><?= __('Add Role') ?></legend>
+        <legend><?= __('Add Rol') ?></legend>
         <?php
             echo $this->Form->control('nombre');
             echo $this->Form->control('codigo');

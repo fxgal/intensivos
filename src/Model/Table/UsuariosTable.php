@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -46,7 +45,6 @@ class UsuariosTable extends Table
             'foreignKey' => 'rol_id',
             'joinType' => 'INNER'
         ]);
-
         $this->hasMany('Personas', [
             'foreignKey' => 'usuario_id'
         ]);

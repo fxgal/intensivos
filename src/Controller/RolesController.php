@@ -8,7 +8,7 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\RolesTable $Roles
  *
- * @method \App\Model\Entity\Role[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Rol[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class RolesController extends AppController
 {
@@ -27,17 +27,17 @@ class RolesController extends AppController
     /**
      * View method
      *
-     * @param string|null $id Role id.
+     * @param string|null $id Rol id.
      * @return \Cake\Http\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $role = $this->Roles->get($id, [
+        $rol = $this->Roles->get($id, [
             'contain' => []
         ]);
 
-        $this->set('role', $role);
+        $this->set('rol', $rol);
     }
 
     /**
@@ -47,58 +47,58 @@ class RolesController extends AppController
      */
     public function add()
     {
-        $role = $this->Roles->newEntity();
+        $rol = $this->Roles->newEntity();
         if ($this->request->is('post')) {
-            $role = $this->Roles->patchEntity($role, $this->request->getData());
-            if ($this->Roles->save($role)) {
-                $this->Flash->success(__('The role has been saved.'));
+            $rol = $this->Roles->patchEntity($rol, $this->request->getData());
+            if ($this->Roles->save($rol)) {
+                $this->Flash->success(__('The rol has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The role could not be saved. Please, try again.'));
+            $this->Flash->error(__('The rol could not be saved. Please, try again.'));
         }
-        $this->set(compact('role'));
+        $this->set(compact('rol'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Role id.
+     * @param string|null $id Rol id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $role = $this->Roles->get($id, [
+        $rol = $this->Roles->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $role = $this->Roles->patchEntity($role, $this->request->getData());
-            if ($this->Roles->save($role)) {
-                $this->Flash->success(__('The role has been saved.'));
+            $rol = $this->Roles->patchEntity($rol, $this->request->getData());
+            if ($this->Roles->save($rol)) {
+                $this->Flash->success(__('The rol has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The role could not be saved. Please, try again.'));
+            $this->Flash->error(__('The rol could not be saved. Please, try again.'));
         }
-        $this->set(compact('role'));
+        $this->set(compact('rol'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Role id.
+     * @param string|null $id Rol id.
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $role = $this->Roles->get($id);
-        if ($this->Roles->delete($role)) {
-            $this->Flash->success(__('The role has been deleted.'));
+        $rol = $this->Roles->get($id);
+        if ($this->Roles->delete($rol)) {
+            $this->Flash->success(__('The rol has been deleted.'));
         } else {
-            $this->Flash->error(__('The role could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The rol could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
