@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreateCenso extends AbstractMigration
+class CreateOfertas extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,12 +12,7 @@ class CreateCenso extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('censo');
-        $table->addColumn('persona_id', 'integer', [
-            'default' => null,
-            'limit' => 11,
-            'null' => false,
-        ]);
+        $table = $this->table('ofertas');
         $table->addColumn('materia_id', 'integer', [
             'default' => null,
             'limit' => 11,
@@ -26,6 +21,11 @@ class CreateCenso extends AbstractMigration
         $table->addColumn('periodo_id', 'integer', [
             'default' => null,
             'limit' => 11,
+            'null' => false,
+        ]);
+        $table->addColumn('estatus', 'string', [
+            'default' => null,
+            'limit' => 255,
             'null' => false,
         ]);
         $table->addColumn('created', 'datetime', [
