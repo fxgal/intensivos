@@ -44,22 +44,4 @@ class CreateUsuarios extends AbstractMigration
         ]);
         $table->create();
     }
-
-    /**
-     * Migrate Up.
-     */
-    public function up()
-    {
-        $this->change();
-    }
-
-    /**
-     * Migrate Down.
-     */
-    public function down()
-    {
-        $this->table('usuarios')->drop()->save();
-
-        $this->up();
-    }
 }

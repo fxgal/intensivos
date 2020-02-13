@@ -1,4 +1,5 @@
 <?php
+
 use Migrations\AbstractMigration;
 
 class CreateConfiguraciones extends AbstractMigration
@@ -43,23 +44,5 @@ class CreateConfiguraciones extends AbstractMigration
             'null' => false,
         ]);
         $table->create();
-    }
-
-    /**
-     * Migrate Up.
-     */
-    public function up()
-    {
-        $this->change();
-    }
-
-    /**
-     * Migrate Down.
-     */
-    public function down()
-    {
-        $this->table('configuraciones')->drop()->save();
-
-        $this->up();
     }
 }
