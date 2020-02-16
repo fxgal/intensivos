@@ -255,3 +255,4 @@ class PrelacionesSeed extends AbstractSeed
         $table->insert($data)->save();
     }
 }
+//Update
