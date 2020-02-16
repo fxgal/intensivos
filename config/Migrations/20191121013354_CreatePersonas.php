@@ -54,22 +54,4 @@ class CreatePersonas extends AbstractMigration
         ]);
         $table->create();
     }
-
-    /**
-     * Migrate Up.
-     */
-    public function up()
-    {
-        $this->change();
-    }
-
-    /**
-     * Migrate Down.
-     */
-    public function down()
-    {
-        $this->table('personas')->drop()->save();
-
-        $this->up();
-    }
 }

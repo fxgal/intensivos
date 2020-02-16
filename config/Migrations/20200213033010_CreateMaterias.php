@@ -1,8 +1,7 @@
 <?php
-
 use Migrations\AbstractMigration;
 
-class CreateConfiguraciones extends AbstractMigration
+class CreateMaterias extends AbstractMigration
 {
     /**
      * Change Method.
@@ -13,26 +12,20 @@ class CreateConfiguraciones extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('configuraciones');
+        $table = $this->table('materias');
         $table->addColumn('nombre', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('clave', 'string', [
+        $table->addColumn('codigo', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addIndex([
-            'clave',
-        ], [
-            'name' => 'UNIQUE_CLAVE',
-            'unique' => true,
-        ]);
-        $table->addColumn('valor', 'string', [
+        $table->addColumn('semestre', 'integer', [
             'default' => null,
-            'limit' => 255,
+            'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('created', 'datetime', [

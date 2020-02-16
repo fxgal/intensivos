@@ -204,4 +204,5 @@ Type::build('timestamp')
 Inflector::rules('irregular', [
     'rol' => 'roles',
     'configuracion' => 'configuraciones',
+    'prelacion' => 'prelaciones',
 ]);

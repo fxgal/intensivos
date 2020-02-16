@@ -1,8 +1,7 @@
 <?php
-
 use Migrations\AbstractMigration;
 
-class CreateConfiguraciones extends AbstractMigration
+class CreateCensos extends AbstractMigration
 {
     /**
      * Change Method.
@@ -13,26 +12,20 @@ class CreateConfiguraciones extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('configuraciones');
-        $table->addColumn('nombre', 'string', [
+        $table = $this->table('censos');
+        $table->addColumn('persona_id', 'integer', [
             'default' => null,
-            'limit' => 255,
+            'limit' => 11,
             'null' => false,
         ]);
-        $table->addColumn('clave', 'string', [
+        $table->addColumn('materia_id', 'integer', [
             'default' => null,
-            'limit' => 255,
+            'limit' => 11,
             'null' => false,
         ]);
-        $table->addIndex([
-            'clave',
-        ], [
-            'name' => 'UNIQUE_CLAVE',
-            'unique' => true,
-        ]);
-        $table->addColumn('valor', 'string', [
+        $table->addColumn('periodo_id', 'integer', [
             'default' => null,
-            'limit' => 255,
+            'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('created', 'datetime', [

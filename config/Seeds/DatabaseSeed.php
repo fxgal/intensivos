@@ -18,11 +18,14 @@ class DatabaseSeed extends AbstractSeed
      */
     public function run()
     {
-        $this->call('ConfiguracionesSeed');
         $this->call('RolesSeed');
+        $this->call('CensoSeed');
+        $this->call('OfertasSeed');
+        $this->call('PeriodosSeed');
         $this->call('UsuariosSeed');
         $this->call('PersonasSeed');
         $this->call('MateriasSeed');
         $this->call('PrelacionesSeed');
+        $this->call('ConfiguracionesSeed');
     }
 }

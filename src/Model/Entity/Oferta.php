@@ -4,15 +4,19 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Role Entity
+ * Oferta Entity
  *
  * @property int $id
- * @property string $nombre
- * @property string $codigo
+ * @property int $materia_id
+ * @property int $periodo_id
+ * @property string $estatus
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ *
+ * @property \App\Model\Entity\Materia $materia
+ * @property \App\Model\Entity\Periodo $periodo
  */
-class Role extends Entity
+class Oferta extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -24,9 +28,12 @@ class Role extends Entity
      * @var array
      */
     protected $_accessible = [
-        'nombre' => true,
-        'codigo' => true,
+        'materia_id' => true,
+        'periodo_id' => true,
+        'estatus' => true,
         'created' => true,
-        'modified' => true
+        'modified' => true,
+        'materia' => true,
+        'periodo' => true
     ];
 }
